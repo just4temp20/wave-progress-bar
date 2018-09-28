@@ -1,0 +1,49 @@
+<!DOCTYPE html src="http://www.lanrenzhijia.com/others/5028.html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <title>波浪效果</title>
+
+    <style>
+        *{margin:0;padding:0;list-style:none;}
+        body{background-color:#ff5146;}
+        .wave{width:200px;height:200px;overflow:hidden;border-radius:50%;background:rgba(255,203,103,.6);margin:100px auto;position:relative;text-align:center;display:table-cell;vertical-align:middle;}
+        .wave span{display:inline-block;color:#fff;font-size:20px;position:relative;z-index:2;}
+        .wave canvas{position:absolute;left:0;top:0;z-index:1;}
+        .btn-add{width:100px;height:50px;}
+    </style>
+
+</head>
+<body>
+
+<center><br>
+    <div id="wave" class="wave"><span>hello</span></div>
+
+    <br>
+
+    <button class="btn-add btn-0">0%</button>
+    <button class="btn-add btn-50">50%</button>
+    <button class="btn-add btn-100">100%</button>
+</center>
+
+
+
+<script src="../js/Wave.js"></script>
+<script>
+    var wave = new Wave();  //创建水波球对象
+    wave.start(0.6);  //调用水波球方法，设置为60%
+
+    document.querySelector(".btn-0").onclick = function(){
+        wave.start(0);  //0%
+    }
+    document.querySelector(".btn-50").onclick = function(){
+        wave.start(0.5);  //50%
+    }
+    document.querySelector(".btn-100").onclick = function(){
+        wave.start(1.0);  //100%
+    }
+</script>
+
+</body>
+</html>
